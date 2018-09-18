@@ -1,0 +1,13 @@
+{
+    "name": "ZWAVE graph json updater",
+    "version": "0.1.0",
+    "slug": "hello_zwave",
+    "description": "Updates the json for the ZWAVE graph, addon based on hello_world",
+    "startup": "application",
+	"homeassistant_api": true,
+	"hassio_api": true,
+    "boot": "auto",
+    "options": {"upd_interval":1800},
+    "schema": {"upd_interval": "int"},
+    "map": ["config:rw"]
+}
