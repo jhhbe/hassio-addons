@@ -1,0 +1,12 @@
+{
+    "name": "OmenWild ZWAVE graph updater",
+    "version": "0.1.0",
+    "slug": "zwaddon",
+    "description": "Updates the z-wave-graph.json for the ZWAVE diagram",
+	"url": "https://github.com/OmenWild/home-assistant-z-wave-graph",
+    "startup": "application",
+	"boot": "auto",
+    "options": {"upd_interval":1800, "token": null},
+    "schema": {"upd_interval": "int", "token":"str"},
+    "map": ["config:rw"]
+}
