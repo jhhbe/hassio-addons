@@ -2,7 +2,7 @@
     "name": "ZWAVE graph json updater",
     "version": "0.1.0",
     "slug": "hello_zwave",
-    "description": "Updates the json for the ZWAVE graph, addon based on hello_world",
+    "description": "Updates the json for the ZWAVE graph, pre hassio 0.78",
     "startup": "application",
 	"homeassistant_api": true,
 	"hassio_api": true,
