@@ -221,12 +221,19 @@ class ZWave(object):
     def _get_entities(self):
         config_json = json.loads(open("/data/options.json").read())
         token = config_json["token"]
-        url = "http://hassio/homeassistant/api/states"
-        pwd = "Bearer " + token
+        ip = config_json["ip"]
+        port = config_json["port"]
+        pwd =  'Bearer ' + token
         hdr = { 'Authorization' : pwd }
+        print(hdr)
+        #pwd = os.getenv("HASSIO_TOKEN")
+        url = "http://" + ip + ":" + port + "/api/states"
+        #hdr = { 'X-HA-Access' : pwd }
         req = urllib.request.Request(url, headers=hdr)
         response = urllib.request.urlopen(req)
+        print(response)
         entities = json.load(response)
+        print(entities)
         response.close()
         for entity in entities:
             if entity['entity_id'].startswith('zwave'):

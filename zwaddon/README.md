@@ -14,6 +14,10 @@ Improvement areas:
 
 upd_interval: value in seconds to be used as interval between graph data refreshes.
 
+ip: HASSIO ip address, use actual local ip address of your server. HASSIO proxy or 127.0.0.1 will not work.
+
+port: port, default 8123.
+
 token: provide the long-lived access token here. See also: https://www.home-assistant.io/docs/authentication/
 
 ## Manual config
