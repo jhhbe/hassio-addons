@@ -6,6 +6,7 @@
 	"url": "https://github.com/OmenWild/home-assistant-z-wave-graph",
     "startup": "application",
 	"boot": "auto",
+	"arch": ["armv7"],
     "options": {"upd_interval":1800,"ip": "127.0.0.1", "port": "8123", "token": null},
     "schema": {"upd_interval": "int", "ip":"str", "port":"str", "token":"str"},
     "map": ["config:rw"]
