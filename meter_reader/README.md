@@ -5,23 +5,22 @@ Put a webcam in front of your utility meter and AWS Rekognition sends the readin
 
 ## Config
 
-upd_interval: value in seconds to be used as interval between graph data refreshes.
+upd_interval: value in seconds to be used as interval between data refreshes.
 
-ip: HASSIO ip address, use actual local ip address of your server. HASSIO proxy or 127.0.0.1 will not work.
+url: where to find the picture of your meter (webcam)
 
-port: port, default 8123.
+user: basic authentication for cam
 
-token: provide the long-lived access token here. See also: https://www.home-assistant.io/docs/authentication/
+password: password to obtain webcam picture
 
-## Manual config
+baseline: current reading of your meter
 
-In your Home Assistant configuration.yaml add an iframe link in:
+under: max you expect it to go down during an update interval (where I live solar panels allow meters to run backwards)
 
-**panel_iframe:**
-```javascript
-    z_wave_graph:
-        title: "Z-Wave Graph"
-        icon: mdi:vector-square
-        url: "http://ip:port/local/z-wave-graph.html"
-```
-note: you must change ip and port to reflect your setup.
+over: max you expect it to go up during an update interval
+
+aws_access_key_id, aws_secret_access_key, region: see link on how to set up an AWS account. Did not really see how to get your region, I use "us-east-2" (https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html)
+
+mqtt_host, mqtt_port, mqtt_user, mqtt_pwd: find and get access to your MQTT server
+
+mqtt_topic: topic on which meter reading gets published
