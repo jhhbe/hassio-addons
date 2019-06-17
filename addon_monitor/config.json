@@ -1,0 +1,38 @@
+{
+   "name": "addon monitor",
+    "version": "0.1.0",
+    "slug": "addon_monitor",
+    "description": "Addon restarter",
+    "startup": "application",
+    "homeassistant_api": true,
+    "hassio_api": true,
+    "boot": "auto",
+    "options": {
+      "upd_interval": 1800,
+      "ip": "127.0.0.1",
+      "port": "8123",
+      "token": null,
+      "slugs": [
+        {
+          "slug": ""
+        }
+      ],
+      "notify": ""
+    },
+    "schema": {
+      "upd_interval": "int",
+      "ip": "str",
+      "port": "str",
+      "token": "str",
+      "slugs": [
+        {
+          "slug": "str"
+        }
+      ],
+      "notify": "str"
+    },
+    "map": [
+      "config:rw"
+    ],
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"]
+}
