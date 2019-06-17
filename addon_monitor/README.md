@@ -14,7 +14,7 @@ token: provide the long-lived access token here. See also: https://www.home-assi
 
 slug: part after addon/ in http:.../hassio/addon/______
 
-notify: which notification platform to, only tested on tweet
+notify: which notification platform to use, only tested on tweet
 
 
 note: you must change ip, port and other settings to reflect your setup.

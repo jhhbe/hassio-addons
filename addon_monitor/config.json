@@ -2,7 +2,7 @@
    "name": "Addon monitor",
     "version": "0.1.0",
     "slug": "addon_monitor",
-    "description": "Addon restarter, periodically checks to see if your addon is still active. If not, it will try to restart and sends out a notification.",
+    "description": "Addon restarter, periodically checks to see if your addon is still active. If not, it will try to restart and send out a notification.",
     "startup": "application",
     "homeassistant_api": true,
     "hassio_api": true,
