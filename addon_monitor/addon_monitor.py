@@ -20,7 +20,7 @@ while True:
     for item in config_json["slugs"]:
         print(item["slug"])
         Base_URL = 'http://192.168.2.153:8123/api/hassio/addons/' + item["slug"] + '/info'
-		try:
+        try:
             r = requests.get(Base_URL, headers = hdr)
             detail_json = r.json()
             t = datetime.datetime.now()
@@ -29,7 +29,7 @@ while True:
             print(detail_json["data"]["slug"])
             print(detail_json["data"]["state"])
             print("----------")
-        
+
             if (detail_json["data"]["state"] == "stopped"):
                 url = "http://" + ip + ":" + port + "/api/hassio/addons/" + item["slug"] + "/start"
                 try:
