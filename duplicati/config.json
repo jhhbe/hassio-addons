@@ -1,0 +1,21 @@
+{
+    "name": "Duplicati",
+    "version": "0.0.18",
+    "slug": "zduplicati",
+    "description": "Duplicati - simplified armv7 only",
+	"url": "https://github.com/linuxserver/docker-duplicati",
+	"panel_icon": "mdi:cloud-upload-outline",
+	"ports": {
+     "8099/tcp": 8099
+    },
+    "ports_description": {
+     "8099/tcp": "Duplicati ingress port web interface"
+    },
+    "startup": "services",
+	"boot": "auto",
+	"ingress": true,
+    "options": {"source":"/backup","destination": "/backup/latest", "snapshots": 7},
+    "schema": {"source": "str", "destination":"str", "snapshots":"int"},
+    "map": ["backup:rw"],
+	"arch": ["armv7"]
+}

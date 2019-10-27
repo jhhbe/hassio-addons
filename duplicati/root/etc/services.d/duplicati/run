@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+cd /app/duplicati || exit
+
+ exec \
+	s6-setuidgid abc mono Duplicati.Server.exe \
+	--webservice-port=8099 --webservice-interface=any --server-datafolder=/data --webservice-allowed-hostnames=* $CLI_ARGS
