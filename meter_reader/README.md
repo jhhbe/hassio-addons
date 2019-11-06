@@ -2,6 +2,8 @@
 
 Put a webcam in front of your utility meter and AWS Rekognition sends the reading over MQTT to a MQTT server of your choice.
 
+note: if you restart the addon you will need to update the baseline value.
+
 
 ## Config
 
