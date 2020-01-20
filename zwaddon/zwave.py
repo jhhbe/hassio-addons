@@ -232,7 +232,8 @@ class ZWave(object):
         response.close()
         for entity in entities:
             if entity['entity_id'].startswith('zwave'):
-              self.add(entity['attributes'])
+                if entity['state'].startswith('available'):
+                    self.add(entity['attributes'])
 
 
     def _build_dot(self):
