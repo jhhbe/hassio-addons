@@ -232,7 +232,7 @@ class ZWave(object):
         response.close()
         for entity in entities:
             if entity['entity_id'].startswith('zwave'):
-                if entity['state'].startswith('available'):
+                if not (entity['state'].startswith('unavailable')):
                     self.add(entity['attributes'])
 
 
