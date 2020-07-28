@@ -7,6 +7,9 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache curl
 RUN apk add --no-cache python3
 
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN python3 get-pip.py
+
 # install .py script dependency
 RUN pip3 install boto3
 RUN pip3 install requests
