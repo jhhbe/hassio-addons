@@ -1,14 +1,23 @@
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ${BUILD_FROM}
 
 # Add env
 ENV LANG C.UTF-8
 
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
+
+LABEL \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    org.label-schema.build-date=${BUILD_DATE} \
+    org.label-schema.vcs-ref=${BUILD_REF} 
+
 RUN apk add --no-cache curl
 RUN apk add --no-cache python3
-
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-RUN python3 get-pip.py
 
 # install .py script dependency
 RUN pip3 install boto3
